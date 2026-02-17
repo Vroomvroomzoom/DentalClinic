@@ -6,6 +6,7 @@ A modern, single-page dental clinic website built with vanilla HTML, CSS, and Ja
 
 - **Responsive design** — pill-shaped mobile action bar, full-screen hamburger menu, adaptive layouts
 - **SEO-ready** — JSON-LD structured data, Open Graph tags, semantic HTML, meta descriptions
+- **Privacy-focused** — 100% static, no cookies, no external trackers, local fonts & assets
 - **Interactive elements** — before/after comparison sliders, FAQ accordion, scroll-reveal animations
 - **Smart navigation** — OS-aware "Get Directions" (Apple Maps / Google Maps / Android intent)
 - **Quick contact** — WhatsApp float (desktop), call/directions/WhatsApp pill bar (mobile)
@@ -17,20 +18,25 @@ A modern, single-page dental clinic website built with vanilla HTML, CSS, and Ja
 | Markup  | HTML5 (semantic) |
 | Styling | Vanilla CSS with custom properties |
 | Logic   | Vanilla JavaScript (ES6+) |
-| Fonts   | [Poppins](https://fonts.google.com/specimen/Poppins) via Google Fonts |
-| Icons   | [Font Awesome 6](https://fontawesome.com/) |
+| Fonts   | [Poppins](fonts/) (Locally hosted) |
+| Icons   | [Font Awesome 6](css/fontawesome.min.css) (Locally hosted) |
 
 ## 📁 Project Structure
 
 ```
 DentalClinic/
 ├── index.html        # Single-page site (all sections)
+├── privacy.html      # Privacy Policy page
 ├── css/
-│   └── style.css     # All styles, variables, and media queries
+│   ├── style.css     # All styles, variables, and media queries
+│   └── fontawesome.min.css # Local icon styles
 ├── js/
 │   └── main.js       # Menu toggle, sliders, FAQ, scroll, directions
+├── fonts/            # Local Poppins font files
+├── webfonts/         # Local FontAwesome font files
+├── images/           # Site assets (optimized)
 ├── favicon.svg       # SVG favicon (tooth icon)
-├── og-image.png      # Open Graph share image (1200×630)
+├── og-image.png      # Open Graph share image
 └── README.md
 ```
 
