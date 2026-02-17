@@ -1,4 +1,8 @@
 /* 1. Global Reset & Variables */
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     --primary: #0077b6;
     /* Medical Blue */
@@ -485,7 +489,7 @@ ul {
 }
 
 .faq-question:hover {
-    color: var(--secondary);
+    color: var(--accent);
     background-color: #f9f9f9;
 }
 

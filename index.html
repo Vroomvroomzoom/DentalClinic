@@ -10,7 +10,9 @@
     <meta property="og:description"
         content="Top-rated dental clinic in [Location] for Implants, Root Canals, and Cosmetic procedures.">
     <meta property="og:type" content="website">
+    <meta property="og:image" content="og-image.png">
     <title>Best Dentist in [Location] | Bright Smile Dental</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
 
     <!-- Schema Markup (JSON-LD) -->
@@ -142,7 +144,7 @@
                 </div>
                 <div class="about-image">
                     <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                        alt="Dental Team" style="width: 100%; border-radius: 10px;">
+                        alt="Dental Team" loading="lazy" style="width: 100%; border-radius: 10px;">
                 </div>
             </div>
 
@@ -150,7 +152,7 @@
             <div class="doctor-content reveal" style="margin-top: 80px; padding-top: 40px; border-top: 1px solid #eee;">
                 <div class="doctor-image">
                     <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                        alt="Dr. Emily Smith">
+                        alt="Dr. Emily Smith" loading="lazy">
                 </div>
                 <div class="doctor-info">
                     <h2 class="section-title" style="text-align: left;">Meet Dr. Emily Smith</h2>
@@ -175,9 +177,9 @@
                 <div class="gallery-item comparison-card">
                     <div class="comparison-container">
                         <img src="https://images.unsplash.com/photo-1588776814546-1ffcf4722e12?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
-                            alt="Teeth Whitening treatment - After result showing bright white smile" class="img-after">
+                            alt="Teeth Whitening treatment - After result showing bright white smile" class="img-after" loading="lazy">
                         <img src="https://images.unsplash.com/photo-1619864223253-ab05c48f219d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
-                            alt="Teeth Whitening treatment - Before result" class="img-before">
+                            alt="Teeth Whitening treatment - Before result" class="img-before" loading="lazy">
                         <div class="slider-line"></div>
                         <div class="slider-icon">
                             <i class="fas fa-arrows-alt-h"></i>
@@ -195,9 +197,9 @@
                 <div class="gallery-item comparison-card">
                     <div class="comparison-container">
                         <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
-                            alt="Smile Makeover with Veneers - After result" class="img-after">
+                            alt="Smile Makeover with Veneers - After result" class="img-after" loading="lazy">
                         <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
-                            alt="Smile Makeover - Before result" class="img-before">
+                            alt="Smile Makeover - Before result" class="img-before" loading="lazy">
                         <div class="slider-line"></div>
                         <div class="slider-icon">
                             <i class="fas fa-arrows-alt-h"></i>
@@ -337,7 +339,8 @@
                 <a href="https://wa.me/1234567890" target="_blank" aria-label="WhatsApp"><i
                         class="fab fa-whatsapp"></i></a>
             </div>
-            <p>&copy; 2024 Bright Smile Dental. All Rights Reserved.</p>
+            <p>&copy; <span id="year"></span> Bright Smile Dental. All Rights Reserved.</p>
+            <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
         </div>
     </footer>
 
