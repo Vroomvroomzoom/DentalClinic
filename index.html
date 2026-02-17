@@ -66,8 +66,8 @@
     </script>
 
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Local Fonts -->
+    <link rel="stylesheet" href="css/fontawesome.min.css">
 </head>
 
 <body>
@@ -88,8 +88,8 @@
                 <li><a href="#gallery" class="nav-link">Smile Gallery</a></li>
                 <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
                 <li><a href="#contact" class="nav-link nav-btn">Contact Us</a></li>
-                <li><a href="https://instagram.com/YOUR_USERNAME" target="_blank" class="nav-link social-nav"
-                        aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://instagram.com/YOUR_USERNAME" target="_blank" rel="noopener noreferrer"
+                        class="nav-link social-nav" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
             </ul>
         </div>
     </nav>
@@ -143,16 +143,15 @@
                         time to listen to your concerns and customize treatments to your specific needs.</p>
                 </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                        alt="Dental Team" loading="lazy" style="width: 100%; border-radius: 10px;">
+                    <img src="images/dental-team.jpg" alt="Dental Team" loading="lazy"
+                        style="width: 100%; border-radius: 10px;">
                 </div>
             </div>
 
             <!-- Doctor Bio Merged -->
             <div class="doctor-content reveal" style="margin-top: 80px; padding-top: 40px; border-top: 1px solid #eee;">
                 <div class="doctor-image">
-                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                        alt="Dr. Emily Smith" loading="lazy">
+                    <img src="images/doctor.jpg" alt="Dr. Emily Smith" loading="lazy">
                 </div>
                 <div class="doctor-info">
                     <h2 class="section-title" style="text-align: left;">Meet Dr. Emily Smith</h2>
@@ -176,10 +175,11 @@
                 <!-- Comparison Item 1 -->
                 <div class="gallery-item comparison-card">
                     <div class="comparison-container">
-                        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf4722e12?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
-                            alt="Teeth Whitening treatment - After result showing bright white smile" class="img-after" loading="lazy">
-                        <img src="https://images.unsplash.com/photo-1619864223253-ab05c48f219d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
-                            alt="Teeth Whitening treatment - Before result" class="img-before" loading="lazy">
+                        <img src="images/whitening-after.png"
+                            alt="Teeth Whitening treatment - After result showing bright white smile" class="img-after"
+                            loading="lazy">
+                        <img src="images/whitening-before.png" alt="Teeth Whitening treatment - Before result"
+                            class="img-before" loading="lazy">
                         <div class="slider-line"></div>
                         <div class="slider-icon">
                             <i class="fas fa-arrows-alt-h"></i>
@@ -196,10 +196,10 @@
                 <!-- Comparison Item 2 -->
                 <div class="gallery-item comparison-card">
                     <div class="comparison-container">
-                        <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
-                            alt="Smile Makeover with Veneers - After result" class="img-after" loading="lazy">
-                        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
-                            alt="Smile Makeover - Before result" class="img-before" loading="lazy">
+                        <img src="images/hero-bg.jpg" alt="Smile Makeover with Veneers - After result" class="img-after"
+                            loading="lazy">
+                        <img src="images/dental-team.jpg" alt="Smile Makeover - Before result" class="img-before"
+                            loading="lazy">
                         <div class="slider-line"></div>
                         <div class="slider-icon">
                             <i class="fas fa-arrows-alt-h"></i>
@@ -314,8 +314,8 @@
                     <span class="method-detail">(555) 123-4567</span>
                 </a>
 
-                <a href="https://wa.me/1234567890" target="_blank" class="contact-method-card whatsapp-card"
-                    aria-label="Chat on WhatsApp">
+                <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer"
+                    class="contact-method-card whatsapp-card" aria-label="Chat on WhatsApp">
                     <div class="method-icon whatsapp-icon"><i class="fab fa-whatsapp"></i></div>
                     <span class="method-label">WhatsApp</span>
                     <span class="method-detail">Chat with us instantly</span>
@@ -334,18 +334,21 @@
     <footer>
         <div class="footer-content">
             <div class="footer-social">
-                <a href="https://instagram.com/YOUR_USERNAME" target="_blank" aria-label="Instagram"><i
-                        class="fab fa-instagram"></i></a>
-                <a href="https://wa.me/1234567890" target="_blank" aria-label="WhatsApp"><i
+                <a href="https://instagram.com/YOUR_USERNAME" target="_blank" rel="noopener noreferrer"
+                    aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i
                         class="fab fa-whatsapp"></i></a>
             </div>
-            <p>&copy; <span id="year"></span> Bright Smile Dental. All Rights Reserved.</p>
-            <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+        </div>
+        <p>&copy; <span id="year"></span> Bright Smile Dental. All Rights Reserved. | <a href="privacy.html"
+                style="color: grey; text-decoration: underline;">Privacy Policy</a></p>
+        <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
         </div>
     </footer>
 
     <!-- Desktop: WhatsApp float (left) -->
-    <a href="https://wa.me/1234567890" class="whatsapp-float-desktop" target="_blank" aria-label="Chat on WhatsApp">
+    <a href="https://wa.me/1234567890" class="whatsapp-float-desktop" target="_blank" rel="noopener noreferrer"
+        aria-label="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
         <span class="whatsapp-label">Chat on WhatsApp</span>
     </a>
@@ -363,7 +366,8 @@
             <i class="fas fa-map-marker-alt"></i>
             <span>Directions</span>
         </button>
-        <a href="https://wa.me/1234567890" target="_blank" class="pill-btn pill-whatsapp" aria-label="Chat on WhatsApp">
+        <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" class="pill-btn pill-whatsapp"
+            aria-label="Chat on WhatsApp">
             <i class="fab fa-whatsapp"></i>
             <span>WhatsApp</span>
         </a>
