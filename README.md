@@ -65,22 +65,6 @@ python3 -m http.server 8000
 npx -y serve .
 ```
 
-## ⚙️ Customization
-
-Before deploying, update the following placeholder values:
-
-| What | Where | Placeholder |
-|------|-------|-------------|
-| Clinic name | `index.html` (title, logo, footer) | `Bright Smile Dental` |
-| Location | `index.html` (title, hero, meta tags) | `[Location]` / `[Your City]` |
-| Phone number | `index.html` (nav, contact, pill bar) | `+15551234567` |
-| WhatsApp number | `index.html` (contact, footer, float) | `1234567890` |
-| Address | `index.html` (contact, Schema.org) | `123 Dental Avenue` |
-| Coordinates | `index.html` + `js/main.js` | `40.758895, -73.987319` |
-| Instagram | `index.html` (nav, footer, Schema.org) | `YOUR_USERNAME` |
-| Email | `index.html` (contact section) | `info@brightsmiledental.com` |
-| Doctor info | `index.html` (about section) | `Dr. Emily Smith` |
-
 ## 🌐 Deployment
 
 This is a static site — deploy to any hosting provider:
