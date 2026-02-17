@@ -2,15 +2,6 @@
 <html lang="en">
 
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2911R066MX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-2911R066MX');
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
@@ -21,14 +12,6 @@
     <meta property="og:type" content="website">
     <title>Best Dentist in [Location] | Bright Smile Dental</title>
 
-    <!-- Microsoft Clarity -->
-    <script type="text/javascript">
-        (function (c, l, a, r, i, t, y) {
-            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
-            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
-            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
-        })(window, document, "clarity", "script", "YOUR_CLARITY_ID");
-    </script>
 
     <!-- Schema Markup (JSON-LD) -->
     <script type="application/ld+json">
@@ -115,9 +98,7 @@
                 <h1>Painless Dentistry in [Location].</h1>
                 <p>Gentle, modern, and affordable dental care for the whole family. Experience dentistry done
                     differently.</p>
-                <a href="#contact" class="cta-button"
-                    onclick="gtag('event', 'click_call_cta', {'event_category': 'CTA', 'event_label': 'Hero_Button'});">Call
-                    for Advice</a>
+                <a href="#contact" class="cta-button">Call for Advice</a>
             </div>
         </div>
     </section>
@@ -298,78 +279,92 @@
 
     <section id="contact" class="contact section">
         <div class="container">
-            <h2 class="section-title reveal">Visit Us</h2>
-            <div class="contact-wrapper reveal">
-                <div class="contact-info">
-                    <h3>Location</h3>
-                    <p>123 Dental Avenue<br>City Center, ST 12345</p>
+            <h2 class="section-title reveal">Contact Us</h2>
 
-                    <h3>Hours</h3>
-                    <p>Mon - Fri: 9:00 AM - 6:00 PM<br>Sat: 10:00 AM - 2:00 PM</p>
-
-                    <h3>Phone</h3>
-                    <p class="phone-number">
-                        <a href="tel:+15551234567" class="contact-link" aria-label="Call us at (555) 123-4567">
-                            <i class="fas fa-phone-alt"></i> (555) 123-4567
-                        </a>
-                    </p>
-                    <div style="margin-top: 10px;">
-                        <h3>Email</h3>
-                        <p class="email-address">
-                            <a href="mailto:info@brightsmiledental.com" class="contact-link"
-                                aria-label="Email us at info@brightsmiledental.com">
-                                <i class="fas fa-envelope"></i> info@brightsmiledental.com
-                            </a>
-                        </p>
+            <div class="contact-details reveal">
+                <div class="contact-details-row">
+                    <div class="detail-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Location</strong>
+                            <p>123 Dental Avenue<br>City Center, ST 12345</p>
+                        </div>
                     </div>
-
-                    <div class="map-container" style="margin-top: 20px;">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1422937950147!2d-73.98731968482413!3d40.75889497932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus"
-                            width="100%" height="250" style="border:0; border-radius: 8px;" allowfullscreen=""
-                            loading="lazy" title="Dental Clinic Location">
-                        </iframe>
-                        <div style="margin-top: 10px; text-align: center;">
-                            <a href="https://maps.google.com?q=Times+Square,+New+York" target="_blank"
-                                class="directions-btn">
-                                <i class="fas fa-map-marker-alt"></i> Get Directions
-                            </a>
+                    <div class="detail-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong>Hours</strong>
+                            <p>Mon - Fri: 9:00 AM - 6:00 PM<br>Sat: 10:00 AM - 2:00 PM</p>
                         </div>
                     </div>
                 </div>
-                <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-                    <div class="form-group floating-label">
-                        <input type="text" id="name" name="name" placeholder=" " required aria-required="true">
-                        <label for="name">Your Name</label>
-                    </div>
-                    <div class="form-group floating-label">
-                        <input type="email" id="email" name="email" placeholder=" " required aria-required="true">
-                        <label for="email">Your Email</label>
-                    </div>
-                    <div class="form-group floating-label">
-                        <textarea id="message" name="message" placeholder=" " rows="5" required
-                            aria-required="true"></textarea>
-                        <label for="message">How can we help?</label>
-                    </div>
-                    <button type="submit" class="submit-btn" aria-label="Send Message">Send Message</button>
-                    <p class="form-note">We will get back to you within 24 hours.</p>
-                </form>
+                <div class="directions-container">
+                    <button class="directions-btn" id="getDirectionsBtn" aria-label="Get directions to our clinic">
+                        <i class="fas fa-map-marker-alt"></i> Get Directions
+                    </button>
+                </div>
+            </div>
+
+            <div class="contact-methods reveal">
+                <a href="tel:+15551234567" class="contact-method-card call-card" aria-label="Call us">
+                    <div class="method-icon call-icon"><i class="fas fa-phone-alt"></i></div>
+                    <span class="method-label">Call Us</span>
+                    <span class="method-detail">(555) 123-4567</span>
+                </a>
+
+                <a href="https://wa.me/1234567890" target="_blank" class="contact-method-card whatsapp-card"
+                    aria-label="Chat on WhatsApp">
+                    <div class="method-icon whatsapp-icon"><i class="fab fa-whatsapp"></i></div>
+                    <span class="method-label">WhatsApp</span>
+                    <span class="method-detail">Chat with us instantly</span>
+                </a>
+
+                <a href="mailto:info@brightsmiledental.com" class="contact-method-card email-card"
+                    aria-label="Email us">
+                    <div class="method-icon email-icon"><i class="fas fa-envelope"></i></div>
+                    <span class="method-label">Email Us</span>
+                    <span class="method-detail">info@brightsmiledental.com</span>
+                </a>
             </div>
         </div>
     </section>
 
     <footer>
         <div class="footer-content">
+            <div class="footer-social">
+                <a href="https://instagram.com/YOUR_USERNAME" target="_blank" aria-label="Instagram"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/1234567890" target="_blank" aria-label="WhatsApp"><i
+                        class="fab fa-whatsapp"></i></a>
+            </div>
             <p>&copy; 2024 Bright Smile Dental. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <a href="https://wa.me/1234567890" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <!-- Desktop: WhatsApp float (left) -->
+    <a href="https://wa.me/1234567890" class="whatsapp-float-desktop" target="_blank" aria-label="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
-        <span class="whatsapp-text">Contact us via WhatsApp</span>
+        <span class="whatsapp-label">Chat on WhatsApp</span>
     </a>
 
+    <!-- Back to top (right) -->
     <button id="scrollToTop" title="Go to top" aria-label="Scroll to top"><span aria-hidden="true">↑</span></button>
+
+    <!-- Mobile: Pill bottom bar -->
+    <div class="mobile-pill-bar">
+        <a href="tel:+15551234567" class="pill-btn" aria-label="Call us">
+            <i class="fas fa-phone-alt"></i>
+            <span>Call</span>
+        </a>
+        <button class="pill-btn" id="actionDirectionsBtn" aria-label="Get directions">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Directions</span>
+        </button>
+        <a href="https://wa.me/1234567890" target="_blank" class="pill-btn pill-whatsapp" aria-label="Chat on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+            <span>WhatsApp</span>
+        </a>
+    </div>
 
     <script src="js/main.js"></script>
 </body>
