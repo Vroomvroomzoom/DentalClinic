@@ -130,7 +130,8 @@ function openNativeNavigator() {
         window.location.href = `geo:${lat},${lng}?q=${encodeURIComponent(address)}`;
     } else {
         // Desktop / Other → Google Maps in a new tab
-        window.open(`https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`, '_blank', 'noopener');
+        const win = window.open(`https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`, '_blank');
+        if (win) win.opener = null;
     }
 }
 
@@ -145,3 +146,114 @@ const actionDirectionsBtn = document.getElementById('actionDirectionsBtn');
 if (actionDirectionsBtn) {
     actionDirectionsBtn.addEventListener('click', openNativeNavigator);
 }
+
+// Scroll Spy — highlight active nav link based on current section
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
+
+function updateActiveNav() {
+    const scrollPos = window.scrollY + 150;
+
+    sections.forEach(section => {
+        const top = section.offsetTop;
+        const height = section.offsetHeight;
+        const id = section.getAttribute('id');
+
+        if (scrollPos >= top && scrollPos < top + height) {
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + id) {
+                    link.classList.add('active');
+                }
+            });
+        }
+    });
+}
+
+window.addEventListener('scroll', updateActiveNav);
+updateActiveNav();
+
+// Animated Counter for Stats Row
+function animateCounters() {
+    const counters = document.querySelectorAll('.stat-number');
+
+    counters.forEach(counter => {
+        if (counter.dataset.animated) return;
+
+        const rect = counter.getBoundingClientRect();
+        if (rect.top > window.innerHeight || rect.bottom < 0) return;
+
+        counter.dataset.animated = 'true';
+        const target = parseFloat(counter.dataset.target);
+        const isDecimal = counter.dataset.decimal === 'true';
+        const duration = 2000;
+        const startTime = performance.now();
+
+        function update(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            // Ease-out curve
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const current = eased * target;
+
+            if (isDecimal) {
+                counter.textContent = current.toFixed(1);
+            } else {
+                counter.textContent = Math.floor(current).toLocaleString();
+            }
+
+            if (progress < 1) {
+                requestAnimationFrame(update);
+            } else {
+                if (isDecimal) {
+                    counter.textContent = target.toFixed(1);
+                } else {
+                    counter.textContent = target.toLocaleString();
+                }
+            }
+        }
+
+        requestAnimationFrame(update);
+    });
+}
+
+window.addEventListener('scroll', animateCounters);
+animateCounters();
+
+// Dynamic Copyright Year (moved from inline script for CSP compliance)
+const yearEl = document.getElementById('year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+// Clinic Open/Closed Status
+function updateClinicStatus() {
+    const statusEl = document.getElementById('clinic-status');
+    if (!statusEl) return;
+
+    const now = new Date();
+    const day = now.getDay(); // 0 = Sunday, 6 = Saturday
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    const time = hours + minutes / 60; // e.g. 9:30 = 9.5
+
+    let isOpen = false;
+
+    if (day >= 1 && day <= 5) {
+        // Mon–Fri: 9:00 AM – 6:00 PM
+        isOpen = time >= 9 && time < 18;
+    } else if (day === 6) {
+        // Sat: 10:00 AM – 2:00 PM
+        isOpen = time >= 10 && time < 14;
+    }
+    // Sunday: closed
+
+    if (isOpen) {
+        statusEl.className = 'clinic-status open';
+        statusEl.innerHTML = '<span class="status-dot" aria-hidden="true"></span> Open Now';
+    } else {
+        statusEl.className = 'clinic-status closed';
+        statusEl.innerHTML = '<span class="status-dot" aria-hidden="true"></span> Closed';
+    }
+}
+
+updateClinicStatus();
+setInterval(updateClinicStatus, 60000); // Update every minute

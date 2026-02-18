@@ -4,6 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="description"
         content="Best Dentist in [Location]. Offering Implants, Root Canals, and Painless Dentistry. Affordable EMI options available. Book your consultation today!">
     <meta property="og:title" content="Best Dentist in [Location] | Bright Smile Dental">
@@ -110,19 +114,34 @@
             <h2 class="section-title reveal">Our Services</h2>
             <div class="services-grid reveal">
                 <div class="service-card">
-                    <div class="icon">🦷</div>
+                    <div class="icon"><i class="fas fa-tooth"></i></div>
                     <h3>General Dentistry</h3>
                     <p>Routine checkups, cleanings, and fillings to keep your teeth healthy.</p>
                 </div>
                 <div class="service-card">
-                    <div class="icon">✨</div>
+                    <div class="icon"><i class="fas fa-magic"></i></div>
                     <h3>Cosmetic</h3>
                     <p>Teeth whitening and veneers for the smile you've always wanted.</p>
                 </div>
                 <div class="service-card">
-                    <div class="icon">🚑</div>
+                    <div class="icon"><i class="fas fa-bolt"></i></div>
                     <h3>Emergency</h3>
                     <p>Same-day appointments for toothaches and urgent dental needs.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-teeth"></i></div>
+                    <h3>Dental Implants</h3>
+                    <p>Permanent, natural-looking tooth replacements that restore your confidence.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-x-ray"></i></div>
+                    <h3>Root Canal</h3>
+                    <p>Painless root canal therapy to save your natural tooth and relieve pain.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-teeth-open"></i></div>
+                    <h3>Orthodontics</h3>
+                    <p>Braces and clear aligners for a perfectly aligned, beautiful smile.</p>
                 </div>
             </div>
         </div>
@@ -134,34 +153,55 @@
         <div class="container">
             <div class="about-content reveal">
                 <div class="about-text">
-                    <h2 class="section-title" style="text-align: left;">About Us</h2>
+                    <h2 class="section-title text-left">About Us</h2>
                     <p>At Bright Smile Dental, we believe that a visit to the dentist should be a positive experience.
                         Founded in 2010, we have been serving the community with top-tier dental care using the latest
                         technology.</p>
-                    <br>
-                    <p>Our team of experienced professionals is dedicated to your oral health and comfort. We take the
+                    <p class="mt-20">Our team of experienced professionals is dedicated to your oral health and comfort.
+                        We take the
                         time to listen to your concerns and customize treatments to your specific needs.</p>
                 </div>
                 <div class="about-image">
-                    <img src="images/dental-team.jpg" alt="Dental Team" loading="lazy"
-                        style="width: 100%; border-radius: 10px;">
+                    <img src="images/dental-team.jpg" alt="Dental Team" loading="lazy" class="about-img">
                 </div>
             </div>
 
-            <!-- Doctor Bio Merged -->
-            <div class="doctor-content reveal" style="margin-top: 80px; padding-top: 40px; border-top: 1px solid #eee;">
+            <!-- Stats Row -->
+            <div class="stats-row reveal">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="15">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="10000">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-label">Happy Patients</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="25000">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-label">Procedures Done</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="4.9" data-decimal="true">0</span><span
+                        class="stat-suffix">★</span>
+                    <span class="stat-label">Google Rating</span>
+                </div>
+            </div>
+
+            <!-- Doctor Bio -->
+            <div class="doctor-content reveal doctor-section-divider">
                 <div class="doctor-image">
                     <img src="images/doctor.jpg" alt="Dr. Emily Smith" loading="lazy">
                 </div>
                 <div class="doctor-info">
-                    <h2 class="section-title" style="text-align: left;">Meet Dr. Emily Smith</h2>
+                    <h2 class="section-title text-left">Meet Dr. Emily Smith</h2>
                     <p class="subtitle">DDS, Cosmetic Specialist</p>
                     <p>"I believe that every patient deserves a smile they can be proud of. My approach combines
                         artistic vision with the latest medical advancements to create natural, beautiful results."</p>
                     <ul class="credentials">
-                        <li>🎓 Doctor of Dental Surgery, University of Excellence</li>
-                        <li>🏆 Member of the American Dental Association</li>
-                        <li>✨ 15+ Years of Clinical Experience</li>
+                        <li><i class="fas fa-graduation-cap"></i> Doctor of Dental Surgery, University of Excellence
+                        </li>
+                        <li><i class="fas fa-trophy"></i> Member of the American Dental Association</li>
+                        <li><i class="fas fa-star"></i> 15+ Years of Clinical Experience</li>
                     </ul>
                 </div>
             </div>
@@ -171,7 +211,7 @@
     <section id="gallery" class="gallery section">
         <div class="container">
             <h2 class="section-title reveal">Smile Gallery</h2>
-            <div class="gallery-grid reveal">
+            <div class="gallery-grid gallery-single reveal">
                 <!-- Comparison Item 1 -->
                 <div class="gallery-item comparison-card">
                     <div class="comparison-container">
@@ -192,26 +232,6 @@
                         <p>Drag to see the difference</p>
                     </div>
                 </div>
-
-                <!-- Comparison Item 2 -->
-                <div class="gallery-item comparison-card">
-                    <div class="comparison-container">
-                        <img src="images/hero-bg.jpg" alt="Smile Makeover with Veneers - After result" class="img-after"
-                            loading="lazy">
-                        <img src="images/dental-team.jpg" alt="Smile Makeover - Before result" class="img-before"
-                            loading="lazy">
-                        <div class="slider-line"></div>
-                        <div class="slider-icon">
-                            <i class="fas fa-arrows-alt-h"></i>
-                        </div>
-                        <input type="range" min="0" max="100" value="50" class="slider-range"
-                            aria-label="Comparison slider">
-                    </div>
-                    <div class="comparison-info">
-                        <h3>Smile Makeover</h3>
-                        <p>Drag to see the difference</p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -221,17 +241,40 @@
             <h2 class="section-title reveal">Happy Patients</h2>
             <div class="testimonials-grid reveal">
                 <div class="testimonial-card">
+                    <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
                     <p>"The best dental experience I've ever had. Dr. Smith is so gentle and explains everything."</p>
-                    <h4>- Sarah J.</h4>
+                    <div class="testimonial-author">
+                        <div class="avatar" aria-hidden="true">S</div>
+                        <h4>Sarah J.</h4>
+                    </div>
                 </div>
                 <div class="testimonial-card">
+                    <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
                     <p>"My kids actually love coming here! The staff is friendly and the environment is relaxing."</p>
-                    <h4>- Mike T.</h4>
+                    <div class="testimonial-author">
+                        <div class="avatar avatar-green" aria-hidden="true">M</div>
+                        <h4>Mike T.</h4>
+                    </div>
                 </div>
                 <div class="testimonial-card">
+                    <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
                     <p>"Highly recommend for veneers. My smile looks natural and amazing!"</p>
-                    <h4>- Emily R.</h4>
+                    <div class="testimonial-author">
+                        <div class="avatar avatar-purple" aria-hidden="true">E</div>
+                        <h4>Emily R.</h4>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner section">
+        <div class="container">
+            <div class="cta-banner-content reveal">
+                <h2>Ready for Your Best Smile?</h2>
+                <p>Book a free consultation today and discover the difference gentle, modern dentistry makes.</p>
+                <a href="#contact" class="cta-button">Book Free Consultation</a>
             </div>
         </div>
     </section>
@@ -297,6 +340,7 @@
                         <div>
                             <strong>Hours</strong>
                             <p>Mon - Fri: 9:00 AM - 6:00 PM<br>Sat: 10:00 AM - 2:00 PM</p>
+                            <span id="clinic-status" class="clinic-status"></span>
                         </div>
                     </div>
                 </div>
@@ -332,17 +376,38 @@
     </section>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-social">
-                <a href="https://instagram.com/YOUR_USERNAME" target="_blank" rel="noopener noreferrer"
-                    aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i
-                        class="fab fa-whatsapp"></i></a>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="#" class="footer-logo">BrightSmile<span>.</span></a>
+                <p class="footer-tagline">Gentle, modern, and affordable dental care for the whole family.</p>
+                <div class="footer-social">
+                    <a href="https://instagram.com/YOUR_USERNAME" target="_blank" rel="noopener noreferrer"
+                        aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer"
+                        aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#gallery">Smile Gallery</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Dental Avenue</li>
+                    <li><i class="fas fa-phone-alt"></i> (555) 123-4567</li>
+                    <li><i class="fas fa-envelope"></i> info@brightsmiledental.com</li>
+                </ul>
             </div>
         </div>
-        <p>&copy; <span id="year"></span> Bright Smile Dental. All Rights Reserved. | <a href="privacy.html"
-                style="color: grey; text-decoration: underline;">Privacy Policy</a></p>
-        <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+        <div class="footer-bottom">
+            <p>&copy; <span id="year">2026</span> Bright Smile Dental. All Rights Reserved. | <a href="privacy.html"
+                    class="footer-privacy-link">Privacy Policy</a></p>
         </div>
     </footer>
 
