@@ -257,3 +257,38 @@ function updateClinicStatus() {
 
 updateClinicStatus();
 setInterval(updateClinicStatus, 60000); // Update every minute
+
+// Dark Mode Toggle Logic
+const themeToggleButton = document.getElementById('theme-toggle');
+if (themeToggleButton) {
+    const themeIcon = themeToggleButton.querySelector('i');
+    
+    // Check saved preference or system preference
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    // Set initial theme
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        themeIcon.className = 'fas fa-sun';
+    } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        themeIcon.className = 'fas fa-moon';
+    }
+    
+    // Listen for toggle click
+    themeToggleButton.addEventListener('click', () => {
+        let currentTheme = document.documentElement.getAttribute('data-theme');
+        let newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        
+        // Switch icon
+        if (newTheme === 'dark') {
+            themeIcon.className = 'fas fa-sun';
+        } else {
+            themeIcon.className = 'fas fa-moon';
+        }
+    });
+}
