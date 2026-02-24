@@ -137,6 +137,51 @@ html {
     --transition: all 0.3s ease;
 }
 
+[data-theme="dark"] {
+    --primary: #90e0ef;
+    --accent: #00b4d8;
+    --dark: #fbfbfb;
+    --light: #121212;
+    --white: #1e1e1e;
+    --text-muted: #bbb;
+}
+
+[data-theme="dark"] p,
+[data-theme="dark"] span {
+    color: var(--text-muted);
+}
+
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6 {
+    color: var(--dark);
+}
+
+[data-theme="dark"] .call-card,
+[data-theme="dark"] .whatsapp-card,
+[data-theme="dark"] .email-card {
+    background: var(--light);
+}
+
+[data-theme="dark"] .clinic-status.open {
+    background: rgba(21, 128, 61, 0.3);
+    color: #4ade80;
+}
+
+[data-theme="dark"] .clinic-status.closed {
+    background: rgba(185, 28, 28, 0.3);
+    color: #f87171;
+}
+
+[data-theme="dark"] .service-card p,
+[data-theme="dark"] .testimonial-card p,
+[data-theme="dark"] .detail-item p {
+    color: var(--text-muted);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -147,6 +192,8 @@ html {
 body {
     line-height: 1.6;
     color: var(--dark);
+    background-color: var(--white);
+    transition: background-color 0.3s, color 0.3s;
 }
 
 a {
