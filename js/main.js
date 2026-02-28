@@ -257,3 +257,49 @@ function updateClinicStatus() {
 
 updateClinicStatus();
 setInterval(updateClinicStatus, 60000); // Update every minute
+
+// Dark Mode Toggle
+(function () {
+    const toggle = document.getElementById('theme-toggle');
+    if (!toggle) return;
+
+    const html = document.documentElement;
+
+    // Determine initial theme: localStorage > OS preference > light
+    function getPreferredTheme() {
+        const stored = localStorage.getItem('theme');
+        if (stored) return stored;
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            return 'dark';
+        }
+        return 'light';
+    }
+
+    function applyTheme(theme) {
+        if (theme === 'dark') {
+            html.setAttribute('data-theme', 'dark');
+        } else {
+            html.removeAttribute('data-theme');
+        }
+    }
+
+    // Apply on load
+    applyTheme(getPreferredTheme());
+
+    // Toggle on click
+    toggle.addEventListener('click', function () {
+        const isDark = html.getAttribute('data-theme') === 'dark';
+        const newTheme = isDark ? 'light' : 'dark';
+        applyTheme(newTheme);
+        localStorage.setItem('theme', newTheme);
+    });
+
+    // Listen for OS-level theme changes (when no explicit user preference stored)
+    if (window.matchMedia) {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
+            if (!localStorage.getItem('theme')) {
+                applyTheme(e.matches ? 'dark' : 'light');
+            }
+        });
+    }
+})();
